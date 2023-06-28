@@ -1,12 +1,45 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Button, Text } from '@mantine/core';
-import { IconSettings, IconSearch, IconPhoto, IconMessageCircle, IconTrash, IconArrowsLeftRight, IconMenu2, IconHome } from '@tabler/icons-react';
+import { Menu, Button } from '@mantine/core';
+import classNames from 'classnames';
+import {
+  IconPhoto,
+  IconMenu2,
+  IconHome,
+  IconApps,
+  IconUsersGroup,
+  IconApple
+
+} from '@tabler/icons-react';
+
 // Images 
 import logo from '../assets/images/logo/email.png'
 
 export default function Header() {
+  const [hasShadow, setHasShadow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const shouldHaveShadow = scrollTop > 0;
+      setHasShadow(shouldHaveShadow);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const headerClasses = classNames('flex', 'justify-center', 'bg-white', 'w-full', 'fixed', {
+    'shadow-lg': hasShadow
+  });
+
+
+
   return (
-    <header className='flex justify-center bg-white w-full shadow-md fixed'>
+    <header className='flex justify-center bg-white w-full fixed'>
       <div className='h-20 flex flex-row items-center justify-between px-5 md:px-7 lg:px-0  container '>
 
         {/* Header */}
@@ -20,8 +53,9 @@ export default function Header() {
             <h1>Mail.</h1>
           </div>
         </Link>
+
         {/* Menu Large */}
-        <div className=' hidden lg:flex flex-row items-center justify-start gap-12 font-Quicksand font-semibold'>
+        <div className=' hidden md:flex flex-row items-center justify-start gap-12 xl:gap-16 font-Quicksand font-semibold'>
           <Link
             to='#home'
             className='hover:text-blue-500'
@@ -43,7 +77,7 @@ export default function Header() {
         </div>
 
         {/* Menu Small */}
-        <div className=''>
+        <div className='block md:hidden'>
           <Menu shadow="md" width={200} >
             <Menu.Target>
               <Button
@@ -58,34 +92,26 @@ export default function Header() {
 
             <Menu.Dropdown>
               <Menu.Item icon={<IconHome size={14} />}>Home</Menu.Item>
-              <Menu.Item icon={<IconMessageCircle size={14} />}>Features</Menu.Item>
-              <Menu.Item icon={<IconPhoto size={14} />}>Pricing</Menu.Item>
+              <Menu.Item icon={<IconApple size={14} />}>Features</Menu.Item>
+              <Menu.Item icon={<IconUsersGroup size={14} />}>Pricing</Menu.Item>
               <Menu.Item icon={<IconPhoto size={14} />}>About</Menu.Item>
-              <Menu.Item
-                icon={<IconSearch size={14} />}
-                rightSection={<Text size="xs" color="dimmed">⌘K</Text>}
-              >
-                Search
-              </Menu.Item>
-
               <Menu.Divider />
-
-              <Menu.Item icon={<IconArrowsLeftRight size={14} />}>Transfer my data</Menu.Item>
-              <Menu.Item color="red" icon={<IconTrash size={14} />}>Delete my account</Menu.Item>
+              <Menu.Item color="blue" icon={<IconApps size={14} />}>Register</Menu.Item>
             </Menu.Dropdown>
           </Menu>
         </div>
 
         {/* Register */}
-        {/* <div>
+        <div className='hidden md:block'>
           <Link
             to={'/#register'}
-            className='text-blue-500  border border-blue-500 hover:text-white hover:bg-blue-500 font-bold py-2 px-4 rounded-full'>
+            className=' text-blue-500  border border-blue-500 hover:text-white hover:bg-blue-500 font-bold py-2 px-4 rounded-full'>
             Register
           </Link>
-        </div> */}
+        </div>
 
       </div>
     </header >
   )
 }
+
