@@ -17,9 +17,11 @@
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-form-hook": "^0.0.1",
     "react-router-dom": "^6.14.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.3.1",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
