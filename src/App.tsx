@@ -7,10 +7,9 @@ import Particles from "react-tsparticles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim";
 
-
 import Home from "./pages/home"
 // import Header from "./layouts/Header"
-import Footer from "./layouts/Footer"
+//import Footer from "./layouts/Footer"///asdf
 import TempHeader from "./layouts/TempHeader"
 
 function App() {
