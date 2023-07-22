@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -9,7 +8,7 @@ export default function Home(props: any) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { },
   } = useForm();
   const url = import.meta.env.VITE_API_URL;
 
@@ -68,7 +67,7 @@ export default function Home(props: any) {
                       type="text"
                       id="name"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                      placeholder="Laki..."
+                      placeholder="Postaye..."
                       required
                       {...register('name')} />
                   </div>
@@ -78,7 +77,7 @@ export default function Home(props: any) {
                       type="text"
                       id="text"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                      placeholder="Laki Email Marketing"
+                      placeholder="Postaye Email Marketing"
                       required
                       {...register('companyName')} />
                   </div>

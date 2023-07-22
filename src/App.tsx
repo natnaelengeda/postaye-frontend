@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Home from "./pages/home"
-import Header from "./layouts/Header"
+// import Header from "./layouts/Header"
 import Footer from "./layouts/Footer"
 import TempHeader from "./layouts/TempHeader"
 function App() {
-  const [highlightName, setHighlightName] = useState(false);
+  // const [highlightName, setHighlightName] = useState(false);
   const [clicked, setclicked] = useState(false);
   return (
     <Router>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Button } from '@mantine/core';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import {
   IconPhoto,
   IconMenu2,
@@ -24,7 +24,7 @@ export default function Header() {
       const shouldHaveShadow = scrollTop > 0;
       setHasShadow(shouldHaveShadow);
     };
-
+    console.log(hasShadow);
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -32,9 +32,9 @@ export default function Header() {
     };
   }, []);
 
-  const headerClasses = classNames('flex', 'justify-center', 'bg-white', 'w-full', 'fixed', {
-    'shadow-lg': hasShadow
-  });
+  // const headerClasses = classNames('flex', 'justify-center', 'bg-white', 'w-full', 'fixed', {
+  //   'shadow-lg': hasShadow
+  // });
 
 
 
