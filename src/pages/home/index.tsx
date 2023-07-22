@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 export default function Home(props: any) {
   const { clicked } = props;
 
+
   const {
     register,
     handleSubmit,
@@ -48,8 +49,9 @@ export default function Home(props: any) {
   };
 
   return (
-    <div className="container mx-auto font-Nunito">
-      <div className="grid grid-cols-1  md:grid-cols-2 gap-10 items-center justify-center px-5 md:px-20">
+    <div className="container mx-auto font-Nunito ">
+
+      <div className=" z-20 grid grid-cols-1  md:grid-cols-2 gap-10 items-center justify-center px-5 md:px-20">
         <div className="flex flex-col gap-5 text-white">
           <div className="w-full flex flex-col gap-5 text-3xl md:text-6xl font-bold text-white space-x-2">
             <p>Email Marketing Mastery: Reach Millions, Unleash Success!</p>
@@ -156,6 +158,7 @@ export default function Home(props: any) {
           </div>
         </div>
       </div>
+
     </div>
   );
 }

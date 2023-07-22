@@ -7,7 +7,7 @@ export default function TempHeader(props: any) {
   const { setclicked } = props;
 
   return (
-    <header className='w-full bg-primary text-white fixed border-b md:border-none border-gray-500'>
+    <header className='z-20 w-full bg-primary text-white fixed border-b md:border-none border-gray-500'>
       <div className='container mx-auto h-20  flex flex-row items-center justify-between px-5 md:px-20  font-Nunito '>
         <div className='flex flex-row items-center gap-2 md:gap-5'>
           <div>
