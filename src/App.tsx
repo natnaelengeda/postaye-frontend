@@ -11,7 +11,7 @@ function App() {
     <Router>
       {/* <Header /> */}
       <TempHeader setclicked={setclicked} />
-      <main className="min-h-screen py-0 pb-10 md:pb-0 md:py-24 font-Nunito bg-primary">
+      <main className="min-h-screen py-24 pb-10 md:pb-0 md:py-24 font-Nunito bg-primary">
         <Routes>
           <Route path="/" element={<Home clicked={clicked} />} />
         </Routes>

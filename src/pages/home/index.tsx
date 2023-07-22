@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+
+
 export default function Home(props: any) {
   const { clicked } = props;
 
@@ -49,19 +51,16 @@ export default function Home(props: any) {
     <div className="container mx-auto font-Nunito">
       <div className="grid grid-cols-1  md:grid-cols-2 gap-10 items-center justify-center px-5 md:px-20">
         <div className="flex flex-col gap-5 text-white">
-          <div className="w-full flex flex-col gap-5 text-4xl md:text-6xl font-bold text-white space-x-2">
-            {/* <p className=''>Scale your</p>
-            <p className=''>bussiness to </p>
-            <p className=''>the top</p> */}
+          <div className="w-full flex flex-col gap-5 text-3xl md:text-6xl font-bold text-white space-x-2">
             <p>Email Marketing Mastery: Reach Millions, Unleash Success!</p>
           </div>
           <div>
-            <p className="text-2xl">
+            <p className="text-xl md:text-2xl">
               Email Marketing and SMS Marketing Platform
             </p>
           </div>
           <div>
-            <p className="text-xl">Join the Waitlist now</p>
+            <p className="md:text-xl">Join the Waitlist now</p>
           </div>
         </div>
         <div className="w-full flex items-center justify-center">
